@@ -6,7 +6,7 @@ digraph G {
     edge [color=red];
     setup -> setupDB;
     setupDB -> connDB;
-    ping[shape=ellipse, fontcolor=green];
+    ping[shape=ellipse, fontcolor=purple];
     connDB -> ping;
     init -> gorouting0 [];
     init -> gorouting1 [];
@@ -27,10 +27,12 @@ digraph G {
     subgraph cluster2 {
         label = "sub2"
         color=green;
+        bgcolor = red;
+
         gorouting1 [shape = ellipse];
         jobs1 [shape = circle, style=filled,color=grey];
         gorouting1 -> jobs1 [color=blue];
-        jobs1 -> sendSQS [label="send"];
+        jobs1 -> sendSQS [label="send",color=green,fontcolor=green];
     }
 }
 
