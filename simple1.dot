@@ -1,0 +1,38 @@
+digraph G {
+    //size ="3,11";
+    main -> init;
+    main -> setup;
+    node [shape=box];
+    edge [color=red];
+    setup -> setupDB;
+    setupDB -> connDB;
+    ping[shape=ellipse];
+    connDB -> ping;
+    init -> gorouting0 [];
+    init -> gorouting1 [];
+    "testAbc.func" // 有特殊字符.要加双引号
+    "dig.t2[group=g2]1" [label=<dig.t2<BR /><FONT POINT-SIZE="9" color="green">Group: g2</FONT>>, fontcolor=red];
+
+    
+    //graph [compound=true];
+
+     subgraph cluster1 {
+        label = "sub1"
+        color=orange;
+        gorouting0 [shape = ellipse];
+        jobs0 [shape = circle, style=filled,color=grey];
+        gorouting0 -> jobs0 [color=blue];
+        jobs0 -> consumSQS [label="aaa"];
+    }
+
+    subgraph cluster2 {
+        label = "sub2"
+        color=green;
+        gorouting1 [shape = ellipse];
+        jobs1 [shape = circle, style=filled,color=grey];
+        gorouting1 -> jobs1 [color=blue];
+        jobs1 -> sendSQS [label="send"];
+    }
+}
+
+
