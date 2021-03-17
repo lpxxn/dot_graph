@@ -6,7 +6,7 @@ digraph G {
     edge [color=red];
     setup -> setupDB;
     setupDB -> connDB;
-    ping[shape=ellipse];
+    ping[shape=ellipse, fontcolor=green];
     connDB -> ping;
     init -> gorouting0 [];
     init -> gorouting1 [];
