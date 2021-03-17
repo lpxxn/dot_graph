@@ -15,7 +15,6 @@ digraph G {
 
     
     //graph [compound=true];
-
      subgraph cluster1 {
         label = "sub1"
         color=orange;
