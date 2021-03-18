@@ -23,19 +23,21 @@ digraph G {
         gorouting0 [shape = ellipse];
         jobs0 [shape = circle, style=filled,color=grey];
         gorouting0 -> jobs0 [color=blue];
-        jobs0 -> consumSQS [label="aaa"];
+        jobs0 -> consumSQS [label="aaa", dir=back]; // dir 控制箭头方向
     }
 
     subgraph cluster2 {
         label = "sub2"
         color=green;
-        bgcolor = red;
+        bgcolor = lightblue;
 
         gorouting1 [shape = ellipse];
         jobs1 [shape = circle, style=filled,color=grey];
+        jobs1 -> jobs1 [color=black];
         gorouting1 -> jobs1 [color=blue];
         jobs1 -> sendSQS [label="send",color=green,fontcolor=green];
     }
+    1->1;
 }
 
 
