@@ -1,5 +1,7 @@
 digraph G {
     //size ="3,11";
+    //rankdir=LR; 图默认是竖着展示，可以通过randk direction去控制方向
+    main[shape=doublecircle] // https://graphviz.org/doc/info/shapes.html
     main -> init;
     main -> setup [arrowhead=olnormal]; // https://graphviz.org/doc/info/arrows.html
     node [shape=box];

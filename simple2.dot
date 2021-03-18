@@ -1,5 +1,16 @@
 graph G {
+
     a -- b
-    c -> d
+    c -- d
+    subgraph cluster1 {
+        graph[color=red, bgcolor=grey]
+        e -- f
+    }
+    subgraph cluster2 {
+        color = blue
+        bgcolor=yellow
+        label=llll
+        z -- y
+    }
 }
 
