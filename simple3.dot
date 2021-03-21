@@ -1,43 +1,16 @@
-digraph G {
-    //size ="3,11";
-    //rankdir=LR; 图默认是竖着展示，可以通过randk direction去控制方向
-    main[shape=doublecircle] // https://graphviz.org/doc/info/shapes.html
-    main -> init;
-    main -> setup [arrowhead=olnormal]; // https://graphviz.org/doc/info/arrows.html
-    node [shape=box];
-    edge [color=red];
-    setup -> setupDB;
-    setupDB -> connDB;
-    ping[shape=ellipse, fontcolor=purple];
-    connDB -> ping;
-    init -> gorouting0 [];
-    init -> gorouting1 [];
-    "testAbc.func" // 有特殊字符.要加双引号
-    "dig.t2[group=g2]1" [label=<dig.t2<BR /><FONT POINT-SIZE="9" color="green">Group: g2</FONT>>, fontcolor=red];
+graph G {
 
-    
-    //graph [compound=true];
-     subgraph cluster1 {
-        label = "sub1"
-        color=orange;
-        gorouting0 [shape = ellipse];
-        jobs0 [shape = circle, style=filled,color=grey];
-        gorouting0 -> jobs0 [color=blue];
-        jobs0 -> consumSQS [label="aaa", dir=back]; // dir 控制箭头方向
+    a -- b
+    c -- d
+    subgraph cluster1 {
+        graph[color=red, bgcolor=grey]
+        e -- f
     }
-
     subgraph cluster2 {
-        label = "sub2"
-        color=green;
-        bgcolor = lightblue;
-
-        gorouting1 [shape = ellipse];
-        jobs1 [shape = circle, style=filled,color=grey];
-        jobs1 -> jobs1 [color=black];
-        gorouting1 -> jobs1 [color=blue];
-        jobs1 -> sendSQS [label="send",color=green,fontcolor=green];
+        color = blue
+        bgcolor=yellow
+        label=llll
+        z -- y
     }
-    1->1;
 }
-
 

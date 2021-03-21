@@ -1,16 +1,11 @@
-graph G {
-
-    a -- b
-    c -- d
-    subgraph cluster1 {
-        graph[color=red, bgcolor=grey]
-        e -- f
-    }
-    subgraph cluster2 {
-        color = blue
-        bgcolor=yellow
-        label=llll
-        z -- y
-    }
+digraph G1 {
+    subgraph cluster_1 {
+        edge [dir=none, color=green];
+        A -> B -> C -> A;
+    };
+    subgraph cluster_2 {
+        edge [color=red];
+        B -> C;
+        C -> A;
+    };
 }
-

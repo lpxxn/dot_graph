@@ -1,11 +1,7 @@
 digraph G1 {
-    subgraph cluster_1 {
-        edge [dir=none, color=green];
-        A -> B -> C -> A;
-    };
-    subgraph cluster_2 {
-        edge [color=red];
-        B -> C;
-        C -> A;
-    };
+    edge [dir=none];
+    a -> b;
+    a -> d;
+    b -> c;
+    d -> c;
 }
