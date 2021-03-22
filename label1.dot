@@ -1,0 +1,6 @@
+digraph G {
+    label = "https://github.com/lpxxn"
+    n1 [label="hello world"];
+    a -> b[label=abc];
+    c [label=<Test<BR /><FONT POINT-SIZE="10">Group: g2</FONT>>; color=orange];
+}
